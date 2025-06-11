@@ -5,9 +5,12 @@
 
 using namespace std;
 
+
 int N ;
 long long GLOBAL_SEED ;
 vector<string> DNA_SEGMENTS;
+string input = "/Users/jeongjimin/Documents/pusan-univ/2025년/1학기/알고리즘/hw16/sample_data/my.inp";
+string output = "/Users/jeongjimin/Documents/pusan-univ/2025년/1학기/알고리즘/hw16/sample_data/my.out";
 
 char DNA_base(long long seed, int i, int j) {
     if (i < 0 || i >= (int)DNA_SEGMENTS.size()) return '$';
@@ -25,7 +28,8 @@ long long get_seed() {
 }
 
 void set_DNA_bank() {
-    ifstream fin("your .inp path");
+//    ifstream fin("your .inp path");
+    ifstream fin(input);
     fin >> N;
     fin >> GLOBAL_SEED;
 
@@ -43,7 +47,7 @@ void set_DNA_bank() {
 }
 
 void get_index(int* idx1, int* idx2) {
-    ifstream fin("your .inp path");
+    ifstream fin(input);
 
     vector<string> lines;
     string line;
@@ -58,7 +62,7 @@ void get_index(int* idx1, int* idx2) {
 }
 
 void report(int r1, int r2) {
-    ofstream fout("your .out path");
+    ofstream fout(output);
     fout << r1 << '\n' << r2;
     fout.close();
 }
